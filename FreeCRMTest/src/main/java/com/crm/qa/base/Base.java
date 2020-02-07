@@ -14,7 +14,7 @@ import com.crm.qa.util.TestUtil;
 
 public class Base {
 
-	static WebDriver driver;
+	public static WebDriver driver;
 	static Properties prop;
 
 	public Base() {
