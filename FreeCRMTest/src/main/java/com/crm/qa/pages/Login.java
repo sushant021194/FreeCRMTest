@@ -8,10 +8,13 @@ import com.crm.qa.base.Base;
 
 public class Login extends Base {
 	@FindBy(name = "username")
+	static
 	WebElement username;
 	@FindBy(name = "password")
+	static
 	WebElement password;
 	@FindBy(xpath = "//input[@type='submit']")
+	static
 	WebElement loginBtn;
 	@FindBy(linkText = "SIGN UP")
 	WebElement signUp;
@@ -21,7 +24,7 @@ public class Login extends Base {
 		PageFactory.initElements(driver, this);
 	}
 	
-	public HomePage login(String un, String pwd)
+	public static HomePage login(String un, String pwd)
 	{
 		username.sendKeys(un);
 		password.sendKeys(pwd);

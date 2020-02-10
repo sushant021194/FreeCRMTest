@@ -15,7 +15,7 @@ import com.crm.qa.util.TestUtil;
 public class Base {
 
 	public static WebDriver driver;
-	static Properties prop;
+	public static Properties prop;
 
 	public Base() {
 		try {
@@ -34,7 +34,7 @@ public class Base {
 	public static void initialization() {
 		String browserName = prop.getProperty("browser");
 		if (browserName.equals("chrome")) {
-			System.setProperty("webdriver.chrome.driver", "");
+			System.setProperty("webdriver.chrome.driver", "/FreeCRMTest/src/main/resources/chromedriver.exe");
 			driver = new ChromeDriver();
 		} else if (browserName.equals("firefox")) {
 			System.setProperty("webdriver.gecko.driver", "");
