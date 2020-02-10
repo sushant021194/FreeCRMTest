@@ -7,17 +7,22 @@ import org.openqa.selenium.support.PageFactory;
 import com.crm.qa.base.Base;
 
 public class Login extends Base {
-	@FindBy(name = "username")
+	@FindBy(name = "email")
 	static
 	WebElement username;
+	
 	@FindBy(name = "password")
 	static
 	WebElement password;
-	@FindBy(xpath = "//input[@type='submit']")
+	
+	@FindBy(xpath = "//div[@text='Login']")
 	static
-	WebElement loginBtn;
-	@FindBy(linkText = "SIGN UP")
-	WebElement signUp;
+	WebElement login;
+
+	@FindBy(linkText="LOG IN")
+	static
+	WebElement homeLoginButton;
+	
 	
 	public Login()
 	{
@@ -26,9 +31,10 @@ public class Login extends Base {
 	
 	public static HomePage login(String un, String pwd)
 	{
+		homeLoginButton.click();
 		username.sendKeys(un);
 		password.sendKeys(pwd);
-		loginBtn.click(); 
+		login.click(); 
 		return new HomePage();
 	}
 
